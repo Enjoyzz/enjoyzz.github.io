@@ -1,0 +1,14 @@
+{
+    "name": "enjoys/enjoyzz.github.io",
+    "minimum-stability": "dev",
+    "enjoys/docker-ws": "dev-master",
+    "authors": [
+        {
+            "name": "enjoys",
+            "email": "deadly.info@gmail.com"
+        }
+    ],
+    "require": {
+        "enjoys/docker_ws": "dev-master"
+    }
+}
