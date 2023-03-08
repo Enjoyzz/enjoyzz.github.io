@@ -7,20 +7,103 @@
     "content-hash": "0463908c868aaceca218ab692c09d933",
     "packages": [
         {
+            "name": "composer/semver",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/composer/semver.git",
+                "reference": "fa1ec24f0ab1efe642671ec15c51a3ab879f59bf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/composer/semver/zipball/fa1ec24f0ab1efe642671ec15c51a3ab879f59bf",
+                "reference": "fa1ec24f0ab1efe642671ec15c51a3ab879f59bf",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.3.2 || ^7.0 || ^8.0"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^1.4",
+                "symfony/phpunit-bridge": "^4.2 || ^5"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Composer\\Semver\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nils Adermann",
+                    "email": "naderman@naderman.de",
+                    "homepage": "http://www.naderman.de"
+                },
+                {
+                    "name": "Jordi Boggiano",
+                    "email": "j.boggiano@seld.be",
+                    "homepage": "http://seld.be"
+                },
+                {
+                    "name": "Rob Bast",
+                    "email": "rob.bast@gmail.com",
+                    "homepage": "http://robbast.nl"
+                }
+            ],
+            "description": "Semver library that offers utilities, version constraint parsing and validation.",
+            "keywords": [
+                "semantic",
+                "semver",
+                "validation",
+                "versioning"
+            ],
+            "support": {
+                "irc": "ircs://irc.libera.chat:6697/composer",
+                "issues": "https://github.com/composer/semver/issues",
+                "source": "https://github.com/composer/semver/tree/main"
+            },
+            "funding": [
+                {
+                    "url": "https://packagist.com",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/composer",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/composer/composer",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2023-01-13T15:47:53+00:00"
+        },
+        {
             "name": "enjoys/docker_ws",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Enjoyzz/docker_ws.git",
-                "reference": "5ca86ef1226809fa6535aa0bcdb71b9aee02046f"
+                "reference": "87e0dd8d56a3d014cafe1d308c29120134a77361"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Enjoyzz/docker_ws/zipball/5ca86ef1226809fa6535aa0bcdb71b9aee02046f",
-                "reference": "5ca86ef1226809fa6535aa0bcdb71b9aee02046f",
+                "url": "https://api.github.com/repos/Enjoyzz/docker_ws/zipball/87e0dd8d56a3d014cafe1d308c29120134a77361",
+                "reference": "87e0dd8d56a3d014cafe1d308c29120134a77361",
                 "shasum": ""
             },
             "require": {
+                "composer/semver": "^3.3",
                 "enjoys/dotenv-writer": "^0.1",
                 "enjoys/functions": "^2.4",
                 "php": ">= 8.0",
@@ -47,9 +130,9 @@
             ],
             "support": {
                 "issues": "https://github.com/Enjoyzz/docker_ws/issues",
-                "source": "https://github.com/Enjoyzz/docker_ws/tree/master"
+                "source": "https://github.com/Enjoyzz/docker_ws/tree/0.8.1"
             },
-            "time": "2023-02-11T21:44:25+00:00"
+            "time": "2023-03-08T12:26:20+00:00"
         },
         {
             "name": "enjoys/dotenv",
@@ -140,16 +223,16 @@
         },
         {
             "name": "enjoys/functions",
-            "version": "2.4.16",
+            "version": "2.4.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Enjoyzz/functions.git",
-                "reference": "8549e384a84f0a669cf29137908361e9d0555dba"
+                "reference": "25c65558e37d782455010d262fed542a1a473bbd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Enjoyzz/functions/zipball/8549e384a84f0a669cf29137908361e9d0555dba",
-                "reference": "8549e384a84f0a669cf29137908361e9d0555dba",
+                "url": "https://api.github.com/repos/Enjoyzz/functions/zipball/25c65558e37d782455010d262fed542a1a473bbd",
+                "reference": "25c65558e37d782455010d262fed542a1a473bbd",
                 "shasum": ""
             },
             "require": {
@@ -186,9 +269,9 @@
             "description": "php helper functions",
             "support": {
                 "issues": "https://github.com/Enjoyzz/functions/issues",
-                "source": "https://github.com/Enjoyzz/functions/tree/2.4.16"
+                "source": "https://github.com/Enjoyzz/functions/tree/2.4.17"
             },
-            "time": "2023-01-22T17:27:34+00:00"
+            "time": "2023-03-03T22:28:13+00:00"
         },
         {
             "name": "psr/container",
@@ -250,12 +333,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "a8a68f1cdb412a95add09c1bb9c1fa3a705837a5"
+                "reference": "138fa49967e8196dc0a91d5f333d07ed76248ae3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/a8a68f1cdb412a95add09c1bb9c1fa3a705837a5",
-                "reference": "a8a68f1cdb412a95add09c1bb9c1fa3a705837a5",
+                "url": "https://api.github.com/repos/symfony/console/zipball/138fa49967e8196dc0a91d5f333d07ed76248ae3",
+                "reference": "138fa49967e8196dc0a91d5f333d07ed76248ae3",
                 "shasum": ""
             },
             "require": {
@@ -338,7 +421,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-02-07T10:19:03+00:00"
+            "time": "2023-03-03T15:47:02+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
@@ -346,12 +429,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/deprecation-contracts.git",
-                "reference": "1ee04c65529dea5d8744774d474e7cbd2f1206d3"
+                "reference": "e2d1534420bd723d0ef5aec58a22c5fe60ce6f5e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/deprecation-contracts/zipball/1ee04c65529dea5d8744774d474e7cbd2f1206d3",
-                "reference": "1ee04c65529dea5d8744774d474e7cbd2f1206d3",
+                "url": "https://api.github.com/repos/symfony/deprecation-contracts/zipball/e2d1534420bd723d0ef5aec58a22c5fe60ce6f5e",
+                "reference": "e2d1534420bd723d0ef5aec58a22c5fe60ce6f5e",
                 "shasum": ""
             },
             "require": {
@@ -390,7 +473,7 @@
             "description": "A generic function and convention to trigger deprecation notices",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/deprecation-contracts/tree/v3.2.0"
+                "source": "https://github.com/symfony/deprecation-contracts/tree/v3.2.1"
             },
             "funding": [
                 {
@@ -406,7 +489,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-11-25T10:21:52+00:00"
+            "time": "2023-03-01T10:25:55+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -748,12 +831,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "5e6dd40d75b48692363fe51db28cf8169b617e39"
+                "reference": "e65ce5c9ccb249616aab1dbec53fc938c9017a4c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/5e6dd40d75b48692363fe51db28cf8169b617e39",
-                "reference": "5e6dd40d75b48692363fe51db28cf8169b617e39",
+                "url": "https://api.github.com/repos/symfony/process/zipball/e65ce5c9ccb249616aab1dbec53fc938c9017a4c",
+                "reference": "e65ce5c9ccb249616aab1dbec53fc938c9017a4c",
                 "shasum": ""
             },
             "require": {
@@ -801,7 +884,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-02-02T07:48:03+00:00"
+            "time": "2023-02-24T10:44:40+00:00"
         },
         {
             "name": "symfony/service-contracts",
@@ -809,12 +892,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/service-contracts.git",
-                "reference": "aac98028c69df04ee77eb69b96b86ee51fbf4b75"
+                "reference": "a8c9cedf55f314f3a186041d19537303766df09a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/service-contracts/zipball/aac98028c69df04ee77eb69b96b86ee51fbf4b75",
-                "reference": "aac98028c69df04ee77eb69b96b86ee51fbf4b75",
+                "url": "https://api.github.com/repos/symfony/service-contracts/zipball/a8c9cedf55f314f3a186041d19537303766df09a",
+                "reference": "a8c9cedf55f314f3a186041d19537303766df09a",
                 "shasum": ""
             },
             "require": {
@@ -871,7 +954,7 @@
                 "standards"
             ],
             "support": {
-                "source": "https://github.com/symfony/service-contracts/tree/v3.2.0"
+                "source": "https://github.com/symfony/service-contracts/tree/v3.2.1"
             },
             "funding": [
                 {
@@ -887,7 +970,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-11-25T10:21:52+00:00"
+            "time": "2023-03-01T10:32:47+00:00"
         },
         {
             "name": "symfony/string",
@@ -895,12 +978,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/string.git",
-                "reference": "04d148afb950bc167d1666aa020f6cb8591576a0"
+                "reference": "599f0f073afa9866d1d3b16c1ffafa74a69fb3ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/string/zipball/04d148afb950bc167d1666aa020f6cb8591576a0",
-                "reference": "04d148afb950bc167d1666aa020f6cb8591576a0",
+                "url": "https://api.github.com/repos/symfony/string/zipball/599f0f073afa9866d1d3b16c1ffafa74a69fb3ce",
+                "reference": "599f0f073afa9866d1d3b16c1ffafa74a69fb3ce",
                 "shasum": ""
             },
             "require": {
@@ -973,7 +1056,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-02-02T07:48:03+00:00"
+            "time": "2023-02-24T10:44:40+00:00"
         },
         {
             "name": "symfony/yaml",
@@ -981,12 +1064,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "20dfa1e369dda30cd970c3cf099346837f1e4c28"
+                "reference": "55071edc7115b1bfb15f286b4d6784a84ff09351"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/20dfa1e369dda30cd970c3cf099346837f1e4c28",
-                "reference": "20dfa1e369dda30cd970c3cf099346837f1e4c28",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/55071edc7115b1bfb15f286b4d6784a84ff09351",
+                "reference": "55071edc7115b1bfb15f286b4d6784a84ff09351",
                 "shasum": ""
             },
             "require": {
@@ -1047,7 +1130,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-02-08T07:56:47+00:00"
+            "time": "2023-02-14T13:19:26+00:00"
         }
     ],
     "packages-dev": [],
