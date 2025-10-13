@@ -353,6 +353,14 @@
                 <td id="gemRing-total">0</td>
             </tr>
             <tr>
+                <td class="img"><img src="./assets/2-3007.png"></td>
+                <td>Любовное письмо<br><small class="text-muted">Посещение выбранной наложницы +1 ед.</small></td>
+                <td class="input-cell">
+                    <input type="number" id="letter" class="listen" value="0" min="0">
+                </td>
+                <td id="letter-total">0</td>
+            </tr>
+            <tr>
                 <td class="img"><img src="./assets/2-3026.png"></td>
                 <td>Фураж<br><small class="text-muted"></small></td>
                 <td class="input-cell">
@@ -377,6 +385,7 @@
                 <li>Сандаловый браслет: количество × 2.5</li>
                 <li>Золотые серьги: количество × 2</li>
                 <li>Самоцветное кольцо: количество × 1</li>
+                <li>Любовное письмо: количество × 1</li>
                 <li>Фураж: количество × 1.2</li>
             </ul>
         </div>
@@ -435,6 +444,7 @@
         const sandalwoodBracelet = parseInt(document.getElementById('sandalwoodBracelet').value) || 0;
         const goldEarrings = parseInt(document.getElementById('goldEarrings').value) || 0;
         const gemRing = parseInt(document.getElementById('gemRing').value) || 0;
+        const letter = parseInt(document.getElementById('letter').value) || 0;
         const forage = parseInt(document.querySelector('.forage').value) || 0;
 
         const ordosTotal = Number((ordos * concubines * 1.5).toFixed(0));
@@ -443,10 +453,11 @@
         const sandalwoodBraceletTotal = Number((sandalwoodBracelet * 2.5).toFixed(0));
         const goldEarringsTotal = goldEarrings * 2;
         const gemRingTotal = gemRing;
+        const letterTotal = letter;
         const forageTotal = Number((forage * 1.2).toFixed(1));
 
         const total = ordosTotal + takyaTotal + jadeBraceletTotal + sandalwoodBraceletTotal +
-            goldEarringsTotal + gemRingTotal + forageTotal;
+            goldEarringsTotal + gemRingTotal + letterTotal + forageTotal;
 
         document.getElementById('ordos-total').textContent = ordosTotal;
         document.getElementById('takya-total').textContent = takyaTotal;
@@ -454,6 +465,7 @@
         document.getElementById('sandalwoodBracelet-total').textContent = sandalwoodBraceletTotal;
         document.getElementById('goldEarrings-total').textContent = goldEarringsTotal;
         document.getElementById('gemRing-total').textContent = gemRingTotal;
+        document.getElementById('letter-total').textContent = letterTotal;
         document.getElementById('intimacy-forage-total').textContent = forageTotal;
         document.getElementById('intimacy-total').textContent = Math.floor(total).toFixed(0);
     }
