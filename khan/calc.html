@@ -281,7 +281,7 @@
             <ul>
                 <li>Белый хадак: количество × количество наложниц</li>
                 <li>Золотая шпилька: количество × 5</li>
-                <li>Серебряная шпилька: количество × 3</li>
+                <li>Серебряная шпилька: количество × 2.5</li>
                 <li>Сундуки: количество × 2.2</li>
                 <li>Духи: количество × 1</li>
                 <li>Фураж: количество × 1.5</li>
@@ -356,7 +356,7 @@
             <ul>
                 <li>Такъя: количество × количество наложниц</li>
                 <li>Нефритовый браслет: количество × 5</li>
-                <li>Сандаловый браслет: количество × 3</li>
+                <li>Сандаловый браслет: количество × 2.5</li>
                 <li>Золотые серьги: количество × 2</li>
                 <li>Самоцветное кольцо: количество × 1</li>
                 <li>Фураж: количество × 1.2</li>
@@ -398,10 +398,10 @@
         // Формулы расчета для Обаяния
         const whiteHadakTotal = whiteHadak * concubines;
         const goldHairpinTotal = goldHairpin * 5;
-        const silverHairpinTotal = silverHairpin * 3;
-        const chestsTotal = chests * 2.2;
+        const silverHairpinTotal = Number((silverHairpin * 2.5).toFixed(0));
+        const chestsTotal = Number((chests * 2.2).toFixed(1));
         const spiritsTotal = spirits;
-        const forageTotal = forage * 1.5;
+        const forageTotal = Number((forage * 1.5).toFixed(1));
 
         // Общая сумма без учета наложниц
         const total = whiteHadakTotal + goldHairpinTotal + silverHairpinTotal +
@@ -435,10 +435,10 @@
         // Формулы расчета для Близости
         const takyaTotal = takya * concubines;
         const jadeBraceletTotal = jadeBracelet * 5;
-        const sandalwoodBraceletTotal = sandalwoodBracelet * 3;
+        const sandalwoodBraceletTotal = Number((sandalwoodBracelet * 2.5).toFixed(0));
         const goldEarringsTotal = goldEarrings * 2;
         const gemRingTotal = gemRing;
-        const forageTotal = forage * 1.2;
+        const forageTotal = Number((forage * 1.2).toFixed(1));
 
         // Общая сумма
         const total = takyaTotal + jadeBraceletTotal + sandalwoodBraceletTotal +
