@@ -264,7 +264,7 @@
                 <td class="img"><img src="./assets/2-3026.png"></td>
                 <td>Фураж<br><small class="text-muted"></small></td>
                 <td class="input-cell">
-                    <input type="number" class="forage listen" value="0" min="0">
+                    <input type="number" id="forage-charm" class="forage listen" value="0" min="0">
                 </td>
                 <td id="forageTotal">0</td>
             </tr>
@@ -339,7 +339,7 @@
                 <td class="img"><img src="./assets/2-3026.png"></td>
                 <td>Фураж<br><small class="text-muted"></small></td>
                 <td class="input-cell">
-                    <input type="number" class="forage listen" value="0" min="0">
+                    <input type="number" id="forage-intimacy" class="forage listen" value="0" min="0">
                 </td>
                 <td id="intimacy-forage-total">0</td>
             </tr>
@@ -473,6 +473,9 @@
         input.addEventListener('input', () => syncForageValues(input));
     });
 
+
 </script>
+<script src="./js/save-data.js"></script>
+<script src="./js/save-indicator.js"></script>
 </body>
 </html>
