@@ -264,7 +264,7 @@
                 <td class="img"><img src="./assets/2-3026.png"></td>
                 <td>Фураж<br><small class="text-muted"></small></td>
                 <td class="input-cell">
-                    <input type="number" id="forage" class="listen" value="0" min="0">
+                    <input type="number" class="forage listen" value="0" min="0">
                 </td>
                 <td id="forageTotal">0</td>
             </tr>
@@ -339,7 +339,7 @@
                 <td class="img"><img src="./assets/2-3026.png"></td>
                 <td>Фураж<br><small class="text-muted"></small></td>
                 <td class="input-cell">
-                    <input type="number" id="intimacy-forage" class="listen" value="0" min="0">
+                    <input type="number" class="forage listen" value="0" min="0">
                 </td>
                 <td id="intimacy-forage-total">0</td>
             </tr>
@@ -393,7 +393,7 @@
         const silverHairpin = parseInt(document.getElementById('silverHairpin').value) || 0;
         const chests = parseInt(document.getElementById('chests').value) || 0;
         const spirits = parseInt(document.getElementById('spirits').value) || 0;
-        const forage = parseInt(document.getElementById('forage').value) || 0;
+        const forage = parseInt(document.querySelector('.forage').value) || 0;
 
         // Формулы расчета для Обаяния
         const whiteHadakTotal = whiteHadak * concubines;
@@ -430,7 +430,7 @@
         const sandalwoodBracelet = parseInt(document.getElementById('sandalwoodBracelet').value) || 0;
         const goldEarrings = parseInt(document.getElementById('goldEarrings').value) || 0;
         const gemRing = parseInt(document.getElementById('gemRing').value) || 0;
-        const forage = parseInt(document.getElementById('intimacy-forage').value) || 0;
+        const forage = parseInt(document.querySelector('.forage').value) || 0;
 
         // Формулы расчета для Близости
         const takyaTotal = takya * concubines;
@@ -461,6 +461,16 @@
     document.querySelectorAll('input.listen').forEach(input => {
         input.addEventListener('input', calculateIntimacyTotals);
         input.addEventListener('input', calculateCharmTotals);
+    });
+
+
+    const forageInputs = document.querySelectorAll('.forage');
+    const syncForageValues = (source) => {
+        forageInputs.forEach(el => el.value = source.value);
+    };
+
+    forageInputs.forEach(input => {
+        input.addEventListener('input', () => syncForageValues(input));
     });
 
 </script>
