@@ -12,21 +12,25 @@
             padding: 20px;
             background-color: #f5f5f5;
         }
+
         .container {
             background-color: white;
             border-radius: 8px;
             padding: 20px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
+
         h1 {
             text-align: center;
             color: #333;
         }
+
         .tabs {
             display: flex;
             margin-bottom: 20px;
             border-bottom: 1px solid #ddd;
         }
+
         .tab {
             padding: 10px 20px;
             cursor: pointer;
@@ -36,35 +40,43 @@
             border-radius: 5px 5px 0 0;
             margin-right: 5px;
         }
+
         .tab.active {
             background-color: white;
             font-weight: bold;
             border-bottom: 1px solid white;
             margin-bottom: -1px;
         }
+
         .tab-content {
             display: none;
         }
+
         .tab-content.active {
             display: block;
         }
+
         table {
             width: 100%;
             border-collapse: collapse;
             margin: 20px 0;
         }
+
         th, td {
             padding: 12px 15px;
             text-align: left;
             border-bottom: 1px solid #ddd;
         }
+
         th {
             background-color: #f2f2f2;
             font-weight: bold;
         }
+
         .input-cell {
             text-align: center;
         }
+
         input {
             width: 80px;
             padding: 5px;
@@ -72,10 +84,12 @@
             border: 1px solid #ccc;
             border-radius: 4px;
         }
+
         .total-row {
             font-weight: bold;
             background-color: #f9f9f9;
         }
+
         .formula-info {
             margin-top: 20px;
             padding: 15px;
@@ -83,267 +97,282 @@
             border-radius: 4px;
             font-size: 14px;
         }
+
+        .py-3 {
+            padding-top: 1em;
+            padding-bottom: 1em;
+        }
+
+        td.img {
+            width: 64px;
+        }
+
+        td.img img {
+            width: 64px;
+            height: 64px;
+        }
+
+        .text-muted {
+            color: #666;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Калькулятор</h1>
-        
-        <div class="tabs">
-            <div class="tab active" data-tab="charm">Обаяние</div>
-            <div class="tab" data-tab="intimacy">Близость</div>
-        </div>
-        
-        <!-- Вкладка Обаяние -->
-        <div class="tab-content active" id="charm-tab">
-            <h2>ОБАЯНИЕ</h2>
-            
-            <table>
-                <tr>
-                    <td>Кол-во наложниц</td>
-                    <td class="input-cell">
-                        <input type="number" id="concubines" value="1" min="0">
-                    </td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Белый хадак</td>
-                    <td class="input-cell">
-                        <input type="number" id="whiteHadak" value="0" min="0">
-                    </td>
-                    <td id="whiteHadakTotal">0</td>
-                </tr>
-                <tr>
-                    <td>Золотая шпилька</td>
-                    <td class="input-cell">
-                        <input type="number" id="goldHairpin" value="0" min="0">
-                    </td>
-                    <td id="goldHairpinTotal">0</td>
-                </tr>
-                <tr>
-                    <td>Серебряная шпилька</td>
-                    <td class="input-cell">
-                        <input type="number" id="silverHairpin" value="0" min="0">
-                    </td>
-                    <td id="silverHairpinTotal">0</td>
-                </tr>
-                <tr>
-                    <td>Сундуки</td>
-                    <td class="input-cell">
-                        <input type="number" id="chests" value="0" min="0">
-                    </td>
-                    <td id="chestsTotal">0</td>
-                </tr>
-                <tr>
-                    <td>Духи</td>
-                    <td class="input-cell">
-                        <input type="number" id="spirits" value="0" min="0">
-                    </td>
-                    <td id="spiritsTotal">0</td>
-                </tr>
-                <tr>
-                    <td>Фураж</td>
-                    <td class="input-cell">
-                        <input type="number" id="forage" value="0" min="0">
-                    </td>
-                    <td id="forageTotal">0</td>
-                </tr>
-                <tr class="total-row">
-                    <td>ИТОГ</td>
-                    <td>примерно</td>
-                    <td id="charm-total">0</td>
-                </tr>
-            </table>
-            
-            <div class="formula-info">
-                <p><strong>Формулы расчета:</strong></p>
-                <ul>
-                    <li>Белый хадак: количество × количество наложниц</li>
-                    <li>Золотая шпилька: количество × 5</li>
-                    <li>Серебряная шпилька: количество × 3</li>
-                    <li>Сундуки: количество × 2.2</li>
-                    <li>Духи: количество × 1</li>
-                    <li>Фураж: количество × 1.5</li>
-                </ul>
-            </div>
-        </div>
-        
-        <!-- Вкладка Близость -->
-        <div class="tab-content" id="intimacy-tab">
-            <h2>БЛИЗОСТЬ</h2>
-            
-            <table>
-                <tr>
-                    <td>Кол-во наложниц</td>
-                    <td class="input-cell">
-                        <input type="number" id="intimacy-concubines" value="1" min="0">
-                    </td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Такъя</td>
-                    <td class="input-cell">
-                        <input type="number" id="takya" value="0" min="0">
-                    </td>
-                    <td id="takya-total">0</td>
-                </tr>
-                <tr>
-                    <td>Нефритовый браслет</td>
-                    <td class="input-cell">
-                        <input type="number" id="jadeBracelet" value="0" min="0">
-                    </td>
-                    <td id="jadeBracelet-total">0</td>
-                </tr>
-                <tr>
-                    <td>Сандаловый браслет</td>
-                    <td class="input-cell">
-                        <input type="number" id="sandalwoodBracelet" value="0" min="0">
-                    </td>
-                    <td id="sandalwoodBracelet-total">0</td>
-                </tr>
-                <tr>
-                    <td>Золотые серьги</td>
-                    <td class="input-cell">
-                        <input type="number" id="goldEarrings" value="0" min="0">
-                    </td>
-                    <td id="goldEarrings-total">0</td>
-                </tr>
-                <tr>
-                    <td>Самоцветное кольцо</td>
-                    <td class="input-cell">
-                        <input type="number" id="gemRing" value="0" min="0">
-                    </td>
-                    <td id="gemRing-total">0</td>
-                </tr>
-                <tr>
-                    <td>Фураж</td>
-                    <td class="input-cell">
-                        <input type="number" id="intimacy-forage" value="0" min="0">
-                    </td>
-                    <td id="intimacy-forage-total">0</td>
-                </tr>
-                <tr class="total-row">
-                    <td>ИТОГ</td>
-                    <td>примерно</td>
-                    <td id="intimacy-total">0</td>
-                </tr>
-            </table>
-            
-            <div class="formula-info">
-                <p><strong>Формулы расчета:</strong></p>
-                <ul>
-                    <li>Такъя: количество × количество наложниц</li>
-                    <li>Нефритовый браслет: количество × 5</li>
-                    <li>Сандаловый браслет: количество × 3</li>
-                    <li>Золотые серьги: количество × 2</li>
-                    <li>Самоцветное кольцо: количество × 1</li>
-                    <li>Фураж: количество × 1.2</li>
-                </ul>
-            </div>
+<div class="container">
+    <h1>Калькулятор</h1>
+
+
+    <div class="py-3">Кол-во наложниц: <input type="number" id="concubines"  class="listen" value="1" min="0"></div>
+
+    <div class="tabs">
+        <div class="tab active" data-tab="charm">Обаяние</div>
+        <div class="tab" data-tab="intimacy">Близость</div>
+    </div>
+
+    <!-- Вкладка Обаяние -->
+    <div class="tab-content active" id="charm-tab">
+        <table>
+            <tr>
+                <td class="img"><img src="./assets/2-4213.png"></td>
+                <td>Белый хадак<br><small class="text-muted">Добавляет всем наложницам 1 ед. обаяния</small></td>
+                <td class="input-cell">
+                    <input type="number" id="whiteHadak" class="listen" value="0" min="0">
+                </td>
+                <td id="whiteHadakTotal">0</td>
+            </tr>
+            <tr>
+                <td class="img"><img src="./assets/2-4216.png"></td>
+                <td>Золотая шпилька<br><small class="text-muted">Даёт обаяние (5 ед.) одной случайной наложнице</small></td>
+                <td class="input-cell">
+                    <input type="number" id="goldHairpin" class="listen"  value="0" min="0">
+                </td>
+                <td id="goldHairpinTotal">0</td>
+            </tr>
+            <tr>
+                <td class="img"><img src="./assets/2-4215.png"></td>
+                <td>Серебряная шпилька<br><small class="text-muted">Даёт обаяние (2-5 ед.) одной случайной наложнице</small></td>
+                <td class="input-cell">
+                    <input type="number" id="silverHairpin" class="listen"  value="0" min="0">
+                </td>
+                <td id="silverHairpinTotal">0</td>
+            </tr>
+            <tr>
+                <td class="img"><img src="./assets/2-4211.png"></td>
+                <td>Османтусовые духи<br><small class="text-muted">Обаяние наложницы +1 ед.</small></td>
+                <td class="input-cell">
+                    <input type="number" id="spirits" class="listen"  value="0" min="0">
+                </td>
+                <td id="spiritsTotal">0</td>
+            </tr>
+            <tr>
+                <td class="img"><img src="./assets/2-6001.png"></td>
+                <td>Сундук странствий<br><small class="text-muted"></small></td>
+                <td class="input-cell">
+                    <input type="number" id="chests" class="listen"  value="0" min="0">
+                </td>
+                <td id="chestsTotal">0</td>
+            </tr>
+            <tr>
+                <td class="img"><img src="./assets/2-3026.png"></td>
+                <td>Фураж<br><small class="text-muted"></small></td>
+                <td class="input-cell">
+                    <input type="number" id="forage" class="listen"  value="0" min="0">
+                </td>
+                <td id="forageTotal">0</td>
+            </tr>
+            <tr class="total-row">
+                <td>ИТОГ</td>
+                <td></td>
+                <td>примерно</td>
+                <td id="charm-total">0</td>
+            </tr>
+        </table>
+
+        <div class="formula-info">
+            <p><strong>Формулы расчета:</strong></p>
+            <ul>
+                <li>Белый хадак: количество × количество наложниц</li>
+                <li>Золотая шпилька: количество × 5</li>
+                <li>Серебряная шпилька: количество × 3</li>
+                <li>Сундуки: количество × 2.2</li>
+                <li>Духи: количество × 1</li>
+                <li>Фураж: количество × 1.5</li>
+            </ul>
         </div>
     </div>
 
-    <script>
-        // Переключение между вкладками
-        document.querySelectorAll('.tab').forEach(tab => {
-            tab.addEventListener('click', function() {
-                // Убираем активный класс у всех вкладок и содержимого
-                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-                
-                // Добавляем активный класс текущей вкладке и соответствующему содержимому
-                this.classList.add('active');
-                const tabId = this.getAttribute('data-tab');
-                document.getElementById(`${tabId}-tab`).classList.add('active');
-            });
+    <!-- Вкладка Близость -->
+    <div class="tab-content" id="intimacy-tab">
+
+        <table>
+            <tr>
+                <td class="img"><img src="./assets/2-4223.png"></td>
+                <td>Такъя<br><small class="text-muted">Добавляет всем наложницам 1 ед. близости</small></td>
+                <td class="input-cell">
+                    <input type="number" id="takya" class="listen"  value="0" min="0">
+                </td>
+                <td id="takya-total">0</td>
+            </tr>
+            <tr>
+                <td class="img"><img src="./assets/2-4226.png"></td>
+                <td>Нефритовый браслет<br><small class="text-muted">Даёт близость (5 ед.) одной случайной наложнице</small></td>
+                <td class="input-cell">
+                    <input type="number" id="jadeBracelet" class="listen"  value="0" min="0">
+                </td>
+                <td id="jadeBracelet-total">0</td>
+            </tr>
+            <tr>
+                <td class="img"><img src="./assets/2-4225.png"></td>
+                <td>Сандаловый браслет<br><small class="text-muted">Даёт близость (2-5 ед.) одной случайной наложнице</small></td>
+                <td class="input-cell">
+                    <input type="number" id="sandalwoodBracelet" class="listen"  value="0" min="0">
+                </td>
+                <td id="sandalwoodBracelet-total">0</td>
+            </tr>
+            <tr>
+                <td class="img"><img src="./assets/2-4222.png"></td>
+                <td>Золотые серьги<br><small class="text-muted">Близость наложницы +2 ед.</small></td>
+                <td class="input-cell">
+                    <input type="number" id="goldEarrings" class="listen"  value="0" min="0">
+                </td>
+                <td id="goldEarrings-total">0</td>
+            </tr>
+            <tr>
+                <td class="img"><img src="./assets/2-4221.png"></td>
+                <td>Самоцветное кольцо<br><small class="text-muted">Близость наложницы +1 ед.</small></td>
+                <td class="input-cell">
+                    <input type="number" id="gemRing" class="listen"  value="0" min="0">
+                </td>
+                <td id="gemRing-total">0</td>
+            </tr>
+            <tr>
+                <td class="img"><img src="./assets/2-3026.png"></td>
+                <td>Фураж<br><small class="text-muted"></small></td>
+                <td class="input-cell">
+                    <input type="number" id="intimacy-forage" class="listen"  value="0" min="0">
+                </td>
+                <td id="intimacy-forage-total">0</td>
+            </tr>
+            <tr class="total-row">
+                <td>ИТОГ</td>
+                <td></td>
+                <td>примерно</td>
+                <td id="intimacy-total">0</td>
+            </tr>
+        </table>
+
+        <div class="formula-info">
+            <p><strong>Формулы расчета:</strong></p>
+            <ul>
+                <li>Такъя: количество × количество наложниц</li>
+                <li>Нефритовый браслет: количество × 5</li>
+                <li>Сандаловый браслет: количество × 3</li>
+                <li>Золотые серьги: количество × 2</li>
+                <li>Самоцветное кольцо: количество × 1</li>
+                <li>Фураж: количество × 1.2</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Переключение между вкладками
+    document.querySelectorAll('.tab').forEach(tab => {
+        tab.addEventListener('click', function () {
+            // Убираем активный класс у всех вкладок и содержимого
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+
+            // Добавляем активный класс текущей вкладке и соответствующему содержимому
+            this.classList.add('active');
+            const tabId = this.getAttribute('data-tab');
+            document.getElementById(`${tabId}-tab`).classList.add('active');
         });
-        
-        // Получаем все элементы input для вкладки Обаяние
-        const charmInputs = document.querySelectorAll('#charm-tab input');
-        
-        // Добавляем обработчики событий для всех полей ввода на вкладке Обаяние
-        charmInputs.forEach(input => {
-            input.addEventListener('input', calculateCharmTotals);
-        });
-        
-        // Функция для расчета всех значений на вкладке Обаяние
-        function calculateCharmTotals() {
-            // Получаем значения из полей ввода
-            const concubines = parseInt(document.getElementById('concubines').value) || 0;
-            const whiteHadak = parseInt(document.getElementById('whiteHadak').value) || 0;
-            const goldHairpin = parseInt(document.getElementById('goldHairpin').value) || 0;
-            const silverHairpin = parseInt(document.getElementById('silverHairpin').value) || 0;
-            const chests = parseInt(document.getElementById('chests').value) || 0;
-            const spirits = parseInt(document.getElementById('spirits').value) || 0;
-            const forage = parseInt(document.getElementById('forage').value) || 0;
-            
-            // Формулы расчета для Обаяния
-            const whiteHadakTotal = whiteHadak * concubines;
-            const goldHairpinTotal = goldHairpin * 5;
-            const silverHairpinTotal = silverHairpin * 3;
-            const chestsTotal = chests * 2.2;
-            const spiritsTotal = spirits;
-            const forageTotal = forage * 1.5;
-            
-            // Общая сумма без учета наложниц
-            const total = whiteHadakTotal + goldHairpinTotal + silverHairpinTotal + 
-                         chestsTotal + spiritsTotal + forageTotal;
-            
-            
-            // Обновляем значения в таблице
-            document.getElementById('whiteHadakTotal').textContent = whiteHadakTotal;
-            document.getElementById('goldHairpinTotal').textContent = goldHairpinTotal;
-            document.getElementById('silverHairpinTotal').textContent = silverHairpinTotal;
-            document.getElementById('chestsTotal').textContent = chestsTotal;
-            document.getElementById('spiritsTotal').textContent = spiritsTotal;
-            document.getElementById('forageTotal').textContent = forageTotal;
-            document.getElementById('charm-total').textContent = parseInt(total);
-        }
-        
-        // Получаем все элементы input для вкладки Близость
-        const intimacyInputs = document.querySelectorAll('#intimacy-tab input');
-        
-        // Добавляем обработчики событий для всех полей ввода на вкладке Близость
-        intimacyInputs.forEach(input => {
-            input.addEventListener('input', calculateIntimacyTotals);
-        });
-        
-        // Функция для расчета всех значений на вкладке Близость
-        function calculateIntimacyTotals() {
-            // Получаем значения из полей ввода
-            const concubines = parseInt(document.getElementById('intimacy-concubines').value) || 0;
-            const takya = parseInt(document.getElementById('takya').value) || 0;
-            const jadeBracelet = parseInt(document.getElementById('jadeBracelet').value) || 0;
-            const sandalwoodBracelet = parseInt(document.getElementById('sandalwoodBracelet').value) || 0;
-            const goldEarrings = parseInt(document.getElementById('goldEarrings').value) || 0;
-            const gemRing = parseInt(document.getElementById('gemRing').value) || 0;
-            const forage = parseInt(document.getElementById('intimacy-forage').value) || 0;
-            
-            // Формулы расчета для Близости
-            const takyaTotal = takya * concubines;
-            const jadeBraceletTotal = jadeBracelet * 5;
-            const sandalwoodBraceletTotal = sandalwoodBracelet * 3;
-            const goldEarringsTotal = goldEarrings * 2;
-            const gemRingTotal = gemRing;
-            const forageTotal = forage * 1.2;
-            
-            // Общая сумма
-            const total = takyaTotal + jadeBraceletTotal + sandalwoodBraceletTotal + 
-                         goldEarringsTotal + gemRingTotal + forageTotal;
-            
-            // Обновляем значения в таблице
-            document.getElementById('takya-total').textContent = takyaTotal;
-            document.getElementById('jadeBracelet-total').textContent = jadeBraceletTotal;
-            document.getElementById('sandalwoodBracelet-total').textContent = sandalwoodBraceletTotal;
-            document.getElementById('goldEarrings-total').textContent = goldEarringsTotal;
-            document.getElementById('gemRing-total').textContent = gemRingTotal;
-            document.getElementById('intimacy-forage-total').textContent = forageTotal;
-            document.getElementById('intimacy-total').textContent = Math.round(total);
-        }
-        
-        // Инициализируем расчет при загрузке страницы
-        calculateCharmTotals();
-        calculateIntimacyTotals();
-    </script>
+    });
+
+
+    // Функция для расчета всех значений на вкладке Обаяние
+    const calculateCharmTotals = function () {
+
+        const concubines = parseInt(document.getElementById('concubines').value) || 0;
+
+        // Получаем значения из полей ввода
+
+        const whiteHadak = parseInt(document.getElementById('whiteHadak').value) || 0;
+        const goldHairpin = parseInt(document.getElementById('goldHairpin').value) || 0;
+        const silverHairpin = parseInt(document.getElementById('silverHairpin').value) || 0;
+        const chests = parseInt(document.getElementById('chests').value) || 0;
+        const spirits = parseInt(document.getElementById('spirits').value) || 0;
+        const forage = parseInt(document.getElementById('forage').value) || 0;
+
+        // Формулы расчета для Обаяния
+        const whiteHadakTotal = whiteHadak * concubines;
+        const goldHairpinTotal = goldHairpin * 5;
+        const silverHairpinTotal = silverHairpin * 3;
+        const chestsTotal = chests * 2.2;
+        const spiritsTotal = spirits;
+        const forageTotal = forage * 1.5;
+
+        // Общая сумма без учета наложниц
+        const total = whiteHadakTotal + goldHairpinTotal + silverHairpinTotal +
+            chestsTotal + spiritsTotal + forageTotal;
+
+
+        // Обновляем значения в таблице
+        document.getElementById('whiteHadakTotal').textContent = whiteHadakTotal;
+        document.getElementById('goldHairpinTotal').textContent = goldHairpinTotal;
+        document.getElementById('silverHairpinTotal').textContent = silverHairpinTotal;
+        document.getElementById('chestsTotal').textContent = chestsTotal;
+        document.getElementById('spiritsTotal').textContent = spiritsTotal;
+        document.getElementById('forageTotal').textContent = forageTotal;
+        document.getElementById('charm-total').textContent = parseInt(total);
+    }
+
+    // Функция для расчета всех значений на вкладке Близость
+    const calculateIntimacyTotals = function () {
+
+        const concubines = parseInt(document.getElementById('concubines').value) || 0;
+
+
+        // Получаем значения из полей ввода
+        const takya = parseInt(document.getElementById('takya').value) || 0;
+        const jadeBracelet = parseInt(document.getElementById('jadeBracelet').value) || 0;
+        const sandalwoodBracelet = parseInt(document.getElementById('sandalwoodBracelet').value) || 0;
+        const goldEarrings = parseInt(document.getElementById('goldEarrings').value) || 0;
+        const gemRing = parseInt(document.getElementById('gemRing').value) || 0;
+        const forage = parseInt(document.getElementById('intimacy-forage').value) || 0;
+
+        // Формулы расчета для Близости
+        const takyaTotal = takya * concubines;
+        const jadeBraceletTotal = jadeBracelet * 5;
+        const sandalwoodBraceletTotal = sandalwoodBracelet * 3;
+        const goldEarringsTotal = goldEarrings * 2;
+        const gemRingTotal = gemRing;
+        const forageTotal = forage * 1.2;
+
+        // Общая сумма
+        const total = takyaTotal + jadeBraceletTotal + sandalwoodBraceletTotal +
+            goldEarringsTotal + gemRingTotal + forageTotal;
+
+        // Обновляем значения в таблице
+        document.getElementById('takya-total').textContent = takyaTotal;
+        document.getElementById('jadeBracelet-total').textContent = jadeBraceletTotal;
+        document.getElementById('sandalwoodBracelet-total').textContent = sandalwoodBraceletTotal;
+        document.getElementById('goldEarrings-total').textContent = goldEarringsTotal;
+        document.getElementById('gemRing-total').textContent = gemRingTotal;
+        document.getElementById('intimacy-forage-total').textContent = forageTotal;
+        document.getElementById('intimacy-total').textContent = Math.round(total);
+    }
+
+    // Инициализируем расчет при загрузке страницы
+    calculateCharmTotals();
+    calculateIntimacyTotals();
+
+    document.querySelectorAll('input.listen').forEach(input => {
+        input.addEventListener('input', calculateIntimacyTotals);
+        input.addEventListener('input', calculateCharmTotals);
+    });
+
+</script>
 </body>
 </html>
