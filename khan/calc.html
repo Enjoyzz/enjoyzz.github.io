@@ -219,6 +219,14 @@
     <div class="tab-content active" id="charm-tab">
         <table>
             <tr>
+                <td class="img"><img src="./assets/2-4214.png"></td>
+                <td>Синий хадак<br><small class="text-muted">Добавляет всем вашим наложницам по 1-3 ед. обаяния</small></td>
+                <td class="input-cell">
+                    <input type="number" id="blueHadak" class="listen" value="0" min="0">
+                </td>
+                <td id="blueHadakTotal">0</td>
+            </tr>
+            <tr>
                 <td class="img"><img src="./assets/2-4213.png"></td>
                 <td>Белый хадак<br><small class="text-muted">Добавляет всем наложницам 1 ед. обаяния</small></td>
                 <td class="input-cell">
@@ -279,6 +287,7 @@
         <div class="formula-info">
             <p><strong>Формулы расчета:</strong></p>
             <ul>
+                <li>Синий хадак: количество × количество наложниц * 1.5</li>
                 <li>Белый хадак: количество × количество наложниц</li>
                 <li>Золотая шпилька: количество × 5</li>
                 <li>Серебряная шпилька: количество × 2.5</li>
@@ -293,6 +302,14 @@
     <div class="tab-content" id="intimacy-tab">
 
         <table>
+            <tr>
+                <td class="img"><img src="./assets/2-4224.png"></td>
+                <td>Ордос<br><small class="text-muted">Добавляет всем вашим наложницам 1-3 ед. близости</small></td>
+                <td class="input-cell">
+                    <input type="number" id="ordos" class="listen" value="0" min="0">
+                </td>
+                <td id="ordos-total">0</td>
+            </tr>
             <tr>
                 <td class="img"><img src="./assets/2-4223.png"></td>
                 <td>Такъя<br><small class="text-muted">Добавляет всем наложницам 1 ед. близости</small></td>
@@ -354,6 +371,7 @@
         <div class="formula-info">
             <p><strong>Формулы расчета:</strong></p>
             <ul>
+                <li>Ордос: количество × количество наложниц * 1.5</li>
                 <li>Такъя: количество × количество наложниц</li>
                 <li>Нефритовый браслет: количество × 5</li>
                 <li>Сандаловый браслет: количество × 2.5</li>
@@ -380,12 +398,14 @@
     const calculateCharmTotals = function () {
         const concubines = parseInt(document.getElementById('concubines').value) || 0;
         const whiteHadak = parseInt(document.getElementById('whiteHadak').value) || 0;
+        const blueHadak = parseInt(document.getElementById('blueHadak').value) || 0;
         const goldHairpin = parseInt(document.getElementById('goldHairpin').value) || 0;
         const silverHairpin = parseInt(document.getElementById('silverHairpin').value) || 0;
         const chests = parseInt(document.getElementById('chests').value) || 0;
         const spirits = parseInt(document.getElementById('spirits').value) || 0;
         const forage = parseInt(document.querySelector('.forage').value) || 0;
 
+        const blueHadakTotal = Number((blueHadak * concubines * 1.5).toFixed(0));
         const whiteHadakTotal = whiteHadak * concubines;
         const goldHairpinTotal = goldHairpin * 5;
         const silverHairpinTotal = Number((silverHairpin * 2.5).toFixed(0));
@@ -393,21 +413,23 @@
         const spiritsTotal = spirits;
         const forageTotal = Number((forage * 1.5).toFixed(1));
 
-        const total = whiteHadakTotal + goldHairpinTotal + silverHairpinTotal +
+        const total = blueHadakTotal + whiteHadakTotal + goldHairpinTotal + silverHairpinTotal +
             chestsTotal + spiritsTotal + forageTotal;
 
+        document.getElementById('blueHadakTotal').textContent = blueHadakTotal;
         document.getElementById('whiteHadakTotal').textContent = whiteHadakTotal;
         document.getElementById('goldHairpinTotal').textContent = goldHairpinTotal;
         document.getElementById('silverHairpinTotal').textContent = silverHairpinTotal;
         document.getElementById('chestsTotal').textContent = chestsTotal;
         document.getElementById('spiritsTotal').textContent = spiritsTotal;
         document.getElementById('forageTotal').textContent = forageTotal;
-        document.getElementById('charm-total').textContent = parseInt(total);
+        document.getElementById('charm-total').textContent = Math.floor(total).toFixed(0);
     }
 
     const calculateIntimacyTotals = function () {
 
         const concubines = parseInt(document.getElementById('concubines').value) || 0;
+        const ordos = parseInt(document.getElementById('ordos').value) || 0;
         const takya = parseInt(document.getElementById('takya').value) || 0;
         const jadeBracelet = parseInt(document.getElementById('jadeBracelet').value) || 0;
         const sandalwoodBracelet = parseInt(document.getElementById('sandalwoodBracelet').value) || 0;
@@ -415,6 +437,7 @@
         const gemRing = parseInt(document.getElementById('gemRing').value) || 0;
         const forage = parseInt(document.querySelector('.forage').value) || 0;
 
+        const ordosTotal = Number((ordos * concubines * 1.5).toFixed(0));
         const takyaTotal = takya * concubines;
         const jadeBraceletTotal = jadeBracelet * 5;
         const sandalwoodBraceletTotal = Number((sandalwoodBracelet * 2.5).toFixed(0));
@@ -422,16 +445,17 @@
         const gemRingTotal = gemRing;
         const forageTotal = Number((forage * 1.2).toFixed(1));
 
-        const total = takyaTotal + jadeBraceletTotal + sandalwoodBraceletTotal +
+        const total = ordosTotal + takyaTotal + jadeBraceletTotal + sandalwoodBraceletTotal +
             goldEarringsTotal + gemRingTotal + forageTotal;
 
+        document.getElementById('ordos-total').textContent = ordosTotal;
         document.getElementById('takya-total').textContent = takyaTotal;
         document.getElementById('jadeBracelet-total').textContent = jadeBraceletTotal;
         document.getElementById('sandalwoodBracelet-total').textContent = sandalwoodBraceletTotal;
         document.getElementById('goldEarrings-total').textContent = goldEarringsTotal;
         document.getElementById('gemRing-total').textContent = gemRingTotal;
         document.getElementById('intimacy-forage-total').textContent = forageTotal;
-        document.getElementById('intimacy-total').textContent = Math.round(total);
+        document.getElementById('intimacy-total').textContent = Math.floor(total).toFixed(0);
     }
 
     calculateCharmTotals();
@@ -445,7 +469,11 @@
 
     const forageInputs = document.querySelectorAll('.forage');
     const syncForageValues = (source) => {
-        forageInputs.forEach(el => el.value = source.value);
+        forageInputs.forEach(function (el) {
+            el.value = source.value;
+            calculateCharmTotals()
+            calculateIntimacyTotals()
+        });
     };
 
     forageInputs.forEach(input => {
