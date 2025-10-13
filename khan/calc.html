@@ -366,14 +366,10 @@
 </div>
 
 <script>
-    // Переключение между вкладками
     document.querySelectorAll('.tab').forEach(tab => {
         tab.addEventListener('click', function () {
-            // Убираем активный класс у всех вкладок и содержимого
             document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
             document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-
-            // Добавляем активный класс текущей вкладке и соответствующему содержимому
             this.classList.add('active');
             const tabId = this.getAttribute('data-tab');
             document.getElementById(`${tabId}-tab`).classList.add('active');
@@ -381,13 +377,8 @@
     });
 
 
-    // Функция для расчета всех значений на вкладке Обаяние
     const calculateCharmTotals = function () {
-
         const concubines = parseInt(document.getElementById('concubines').value) || 0;
-
-        // Получаем значения из полей ввода
-
         const whiteHadak = parseInt(document.getElementById('whiteHadak').value) || 0;
         const goldHairpin = parseInt(document.getElementById('goldHairpin').value) || 0;
         const silverHairpin = parseInt(document.getElementById('silverHairpin').value) || 0;
@@ -395,7 +386,6 @@
         const spirits = parseInt(document.getElementById('spirits').value) || 0;
         const forage = parseInt(document.querySelector('.forage').value) || 0;
 
-        // Формулы расчета для Обаяния
         const whiteHadakTotal = whiteHadak * concubines;
         const goldHairpinTotal = goldHairpin * 5;
         const silverHairpinTotal = Number((silverHairpin * 2.5).toFixed(0));
@@ -403,12 +393,9 @@
         const spiritsTotal = spirits;
         const forageTotal = Number((forage * 1.5).toFixed(1));
 
-        // Общая сумма без учета наложниц
         const total = whiteHadakTotal + goldHairpinTotal + silverHairpinTotal +
             chestsTotal + spiritsTotal + forageTotal;
 
-
-        // Обновляем значения в таблице
         document.getElementById('whiteHadakTotal').textContent = whiteHadakTotal;
         document.getElementById('goldHairpinTotal').textContent = goldHairpinTotal;
         document.getElementById('silverHairpinTotal').textContent = silverHairpinTotal;
@@ -418,13 +405,9 @@
         document.getElementById('charm-total').textContent = parseInt(total);
     }
 
-    // Функция для расчета всех значений на вкладке Близость
     const calculateIntimacyTotals = function () {
 
         const concubines = parseInt(document.getElementById('concubines').value) || 0;
-
-
-        // Получаем значения из полей ввода
         const takya = parseInt(document.getElementById('takya').value) || 0;
         const jadeBracelet = parseInt(document.getElementById('jadeBracelet').value) || 0;
         const sandalwoodBracelet = parseInt(document.getElementById('sandalwoodBracelet').value) || 0;
@@ -432,7 +415,6 @@
         const gemRing = parseInt(document.getElementById('gemRing').value) || 0;
         const forage = parseInt(document.querySelector('.forage').value) || 0;
 
-        // Формулы расчета для Близости
         const takyaTotal = takya * concubines;
         const jadeBraceletTotal = jadeBracelet * 5;
         const sandalwoodBraceletTotal = Number((sandalwoodBracelet * 2.5).toFixed(0));
@@ -440,11 +422,9 @@
         const gemRingTotal = gemRing;
         const forageTotal = Number((forage * 1.2).toFixed(1));
 
-        // Общая сумма
         const total = takyaTotal + jadeBraceletTotal + sandalwoodBraceletTotal +
             goldEarringsTotal + gemRingTotal + forageTotal;
 
-        // Обновляем значения в таблице
         document.getElementById('takya-total').textContent = takyaTotal;
         document.getElementById('jadeBracelet-total').textContent = jadeBraceletTotal;
         document.getElementById('sandalwoodBracelet-total').textContent = sandalwoodBraceletTotal;
@@ -454,7 +434,6 @@
         document.getElementById('intimacy-total').textContent = Math.round(total);
     }
 
-    // Инициализируем расчет при загрузке страницы
     calculateCharmTotals();
     calculateIntimacyTotals();
 
