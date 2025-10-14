@@ -493,13 +493,13 @@
         const spirits = parseInt(document.getElementById('spirits').value) || 0;
         const forage = parseInt(document.querySelector('.forage').value) || 0;
 
-        const blueHadakTotal = Number((blueHadak * concubines * 1.5).toFixed(0));
+        const blueHadakTotal = Number(Math.floor(blueHadak * concubines * 1.5).toFixed(0));
         const whiteHadakTotal = whiteHadak * concubines;
         const goldHairpinTotal = goldHairpin * 5;
-        const silverHairpinTotal = Number((silverHairpin * 3).toFixed(0));
-        const chestsTotal = Number((chests * 2.2).toFixed(1));
+        const silverHairpinTotal = Number(Math.floor(silverHairpin * 3).toFixed(0));
+        const chestsTotal = Number(Math.floor(chests * 2.2).toFixed(0));
         const spiritsTotal = spirits;
-        const forageTotal = Number((forage * 1.5).toFixed(1));
+        const forageTotal = Number(Math.floor(forage * 1.5).toFixed(0));
 
         const total = blueHadakTotal + whiteHadakTotal + goldHairpinTotal + silverHairpinTotal +
             chestsTotal + spiritsTotal + forageTotal;
@@ -526,14 +526,14 @@
         const letter = parseInt(document.getElementById('letter').value) || 0;
         const forage = parseInt(document.querySelector('.forage').value) || 0;
 
-        const ordosTotal = Number((ordos * concubines * 1.5).toFixed(0));
+        const ordosTotal = Number(Math.floor(ordos * concubines * 1.5).toFixed(0));
         const takyaTotal = takya * concubines;
         const jadeBraceletTotal = jadeBracelet * 5;
-        const sandalwoodBraceletTotal = Number((sandalwoodBracelet * 3).toFixed(0));
+        const sandalwoodBraceletTotal = Number(Math.floor(sandalwoodBracelet * 3).toFixed(0));
         const goldEarringsTotal = goldEarrings * 2;
         const gemRingTotal = gemRing;
         const letterTotal = letter;
-        const forageTotal = Number((forage * 1.2).toFixed(1));
+        const forageTotal = Number(Math.floor(forage * 1.2).toFixed(1));
 
         const total = ordosTotal + takyaTotal + jadeBraceletTotal + sandalwoodBraceletTotal +
             goldEarringsTotal + gemRingTotal + letterTotal + forageTotal;
