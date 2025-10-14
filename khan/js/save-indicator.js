@@ -1,4 +1,4 @@
-function showSaveIndicator() {
+function showSaveIndicator(dataText = '✓ Данные сохранены') {
     let indicator = document.getElementById('saveIndicator');
     if (!indicator) {
         indicator = document.createElement('div');
@@ -23,7 +23,7 @@ function showSaveIndicator() {
         document.body.appendChild(indicator);
     }
 
-    indicator.textContent = '✓ Данные сохранены';
+    indicator.textContent = dataText;
     indicator.style.opacity = '1';
     indicator.style.transform = 'translateY(0)';
 

@@ -38,7 +38,7 @@ class StorageManager {
 
     collectData() {
         const data = {};
-        document.querySelectorAll('input[type="number"]').forEach(input => {
+        document.querySelectorAll('input[type="number"].listen').forEach(input => {
             data[input.id] = input.value;
         });
         return data;
@@ -57,7 +57,7 @@ class StorageManager {
     }
 
     bindEvents() {
-        document.querySelectorAll('input[type="number"]').forEach(input => {
+        document.querySelectorAll('input[type="number"].listen').forEach(input => {
             input.addEventListener('input', () => this.save());
         });
     }
