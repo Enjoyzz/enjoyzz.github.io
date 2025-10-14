@@ -115,7 +115,7 @@
             margin: 5px;
         }
 
-        .bg,  .bg img, td.icon {
+        .bg, .bg img, td.icon {
             width: 72px;
             height: 72px;
         }
@@ -157,6 +157,14 @@
             width: 200px;
         }
 
+        #blueHadakTotal::before, #silverHairpinTotal::before, #forageTotal::before,
+        #intimacy-forage-total::before, #ordos-total::before, #sandalwoodBracelet-total::before,
+        #charm-total::before, #intimacy-total::before{
+            content: "≈ ";
+            text-wrap: nowrap;
+        }
+
+
         /* Мобильные стили */
         @media (max-width: 600px) {
             body {
@@ -179,11 +187,10 @@
                 padding: 8px 5px;
             }
 
-            .bg,  .bg img, td.icon {
+            .bg, .bg img, td.icon {
                 width: 40px;
                 height: 40px;
             }
-
 
 
             input {
@@ -220,7 +227,7 @@
                 font-size: 11px;
             }
 
-            .bg,  .bg img, td.icon {
+            .bg, .bg img, td.icon {
                 width: 35px;
                 height: 35px;
             }
@@ -238,11 +245,11 @@
 </head>
 <body>
 <div class="container">
-    
+
     <div class="gok_logo">
         <img src="./assets/gok_logo.png" alt="Game of Khans">
     </div>
-    
+
     <h1>Калькулятор обаяния и близости</h1>
 
 
@@ -257,15 +264,20 @@
     <div class="tab-content active" id="charm-tab">
         <table>
             <tr>
-                <td class="icon"><div class="bg bg-red"><img src="./assets/2-4214.png"></div></td>
-                <td>Синий хадак<br><small class="text-muted">Добавляет всем вашим наложницам по 1-3 ед. обаяния</small></td>
+                <td class="icon">
+                    <div class="bg bg-red"><img src="./assets/2-4214.png"></div>
+                </td>
+                <td>Синий хадак<br><small class="text-muted">Добавляет всем вашим наложницам по 1-3 ед. обаяния</small>
+                </td>
                 <td class="input-cell">
                     <input type="number" id="blueHadak" class="listen" value="0" min="0">
                 </td>
                 <td id="blueHadakTotal">0</td>
             </tr>
             <tr>
-                <td class="icon"><div class="bg bg-orange"><img src="./assets/2-4213.png"></div></td>
+                <td class="icon">
+                    <div class="bg bg-orange"><img src="./assets/2-4213.png"></div>
+                </td>
                 <td>Белый хадак<br><small class="text-muted">Добавляет всем наложницам 1 ед. обаяния</small></td>
                 <td class="input-cell">
                     <input type="number" id="whiteHadak" class="listen" value="0" min="0">
@@ -273,7 +285,9 @@
                 <td id="whiteHadakTotal">0</td>
             </tr>
             <tr>
-                <td class="icon"><div class="bg bg-orange"><img src="./assets/2-4216.png"></div></td>
+                <td class="icon">
+                    <div class="bg bg-orange"><img src="./assets/2-4216.png"></div>
+                </td>
                 <td>Золотая шпилька<br><small class="text-muted">Даёт обаяние (5 ед.) одной случайной наложнице</small>
                 </td>
                 <td class="input-cell">
@@ -282,7 +296,9 @@
                 <td id="goldHairpinTotal">0</td>
             </tr>
             <tr>
-                <td class="icon"><div class="bg bg-violet"><img src="./assets/2-4215.png"></div></td>
+                <td class="icon">
+                    <div class="bg bg-violet"><img src="./assets/2-4215.png"></div>
+                </td>
                 <td>Серебряная шпилька<br><small class="text-muted">Даёт обаяние (2-5 ед.) одной случайной
                         наложнице</small></td>
                 <td class="input-cell">
@@ -291,7 +307,9 @@
                 <td id="silverHairpinTotal">0</td>
             </tr>
             <tr>
-                <td class="icon"><div class="bg bg-blue"><img src="./assets/2-4211.png"></div></td>
+                <td class="icon">
+                    <div class="bg bg-blue"><img src="./assets/2-4211.png"></div>
+                </td>
                 <td>Османтусовые духи<br><small class="text-muted">Обаяние наложницы +1 ед.</small></td>
                 <td class="input-cell">
                     <input type="number" id="spirits" class="listen" value="0" min="0">
@@ -299,16 +317,22 @@
                 <td id="spiritsTotal">0</td>
             </tr>
             <tr>
-                <td class="icon"><div class="bg bg-violet"><img src="./assets/2-6001.png"></div></td>
-                <td>Сундук странствий<br><small class="text-muted">Внимание! Расчет по этому предмету может быть не корректен, зависит не только от количества и рандома</small></td>
+                <td class="icon">
+                    <div class="bg bg-violet"><img src="./assets/2-6001.png"></div>
+                </td>
+                <td>Сундук странствий<br><small class="text-muted">Внимание! Расчет по этому предмету может быть не
+                        корректен, зависит не только от количества и рандома</small></td>
                 <td class="input-cell">
                     <input type="number" id="chests" class="listen" value="0" min="0">
                 </td>
                 <td id="chestsTotal">0</td>
             </tr>
             <tr>
-                <td class="icon"><div class="bg bg-violet"><img src="./assets/2-3026.png"></div></td>
-                <td>Фураж<br><small class="text-muted">Внимание! Расчет по этому предмету может быть не корректен, зависит не только от количества и рандома</small></td>
+                <td class="icon">
+                    <div class="bg bg-violet"><img src="./assets/2-3026.png"></div>
+                </td>
+                <td>Фураж<br><small class="text-muted">Внимание! Расчет по этому предмету может быть не корректен,
+                        зависит не только от количества и рандома</small></td>
                 <td class="input-cell">
                     <input type="number" id="forage-charm" class="forage listen" value="0" min="0">
                 </td>
@@ -317,7 +341,7 @@
             <tr class="total-row">
                 <td>ИТОГ</td>
                 <td></td>
-                <td>примерно</td>
+                <td></td>
                 <td id="charm-total">0</td>
             </tr>
         </table>
@@ -341,7 +365,9 @@
 
         <table>
             <tr>
-                <td class="icon"><div class="bg bg-red"><img src="./assets/2-4224.png"></div></td>
+                <td class="icon">
+                    <div class="bg bg-red"><img src="./assets/2-4224.png"></div>
+                </td>
                 <td>Ордос<br><small class="text-muted">Добавляет всем вашим наложницам 1-3 ед. близости</small></td>
                 <td class="input-cell">
                     <input type="number" id="ordos" class="listen" value="0" min="0">
@@ -349,7 +375,9 @@
                 <td id="ordos-total">0</td>
             </tr>
             <tr>
-                <td class="icon"><div class="bg bg-orange"><img src="./assets/2-4223.png"></div></td>
+                <td class="icon">
+                    <div class="bg bg-orange"><img src="./assets/2-4223.png"></div>
+                </td>
                 <td>Такъя<br><small class="text-muted">Добавляет всем наложницам 1 ед. близости</small></td>
                 <td class="input-cell">
                     <input type="number" id="takya" class="listen" value="0" min="0">
@@ -357,7 +385,9 @@
                 <td id="takya-total">0</td>
             </tr>
             <tr>
-                <td class="icon"><div class="bg bg-orange"><img src="./assets/2-4226.png"></div></td>
+                <td class="icon">
+                    <div class="bg bg-orange"><img src="./assets/2-4226.png"></div>
+                </td>
                 <td>Нефритовый браслет<br><small class="text-muted">Даёт близость (5 ед.) одной случайной
                         наложнице</small></td>
                 <td class="input-cell">
@@ -366,7 +396,9 @@
                 <td id="jadeBracelet-total">0</td>
             </tr>
             <tr>
-                <td class="icon"><div class="bg bg-violet"><img src="./assets/2-4225.png"></div></td>
+                <td class="icon">
+                    <div class="bg bg-violet"><img src="./assets/2-4225.png"></div>
+                </td>
                 <td>Сандаловый браслет<br><small class="text-muted">Даёт близость (2-5 ед.) одной случайной
                         наложнице</small></td>
                 <td class="input-cell">
@@ -375,7 +407,9 @@
                 <td id="sandalwoodBracelet-total">0</td>
             </tr>
             <tr>
-                <td class="icon"><div class="bg bg-violet"><img src="./assets/2-4222.png"></div></td>
+                <td class="icon">
+                    <div class="bg bg-violet"><img src="./assets/2-4222.png"></div>
+                </td>
                 <td>Золотые серьги<br><small class="text-muted">Близость наложницы +2 ед.</small></td>
                 <td class="input-cell">
                     <input type="number" id="goldEarrings" class="listen" value="0" min="0">
@@ -383,7 +417,9 @@
                 <td id="goldEarrings-total">0</td>
             </tr>
             <tr>
-                <td class="icon"><div class="bg bg-blue"><img src="./assets/2-4221.png"></div></td>
+                <td class="icon">
+                    <div class="bg bg-blue"><img src="./assets/2-4221.png"></div>
+                </td>
                 <td>Самоцветное кольцо<br><small class="text-muted">Близость наложницы +1 ед.</small></td>
                 <td class="input-cell">
                     <input type="number" id="gemRing" class="listen" value="0" min="0">
@@ -391,7 +427,9 @@
                 <td id="gemRing-total">0</td>
             </tr>
             <tr>
-                <td class="icon"><div class="bg bg-red"><img src="./assets/2-3007.png"></div></td>
+                <td class="icon">
+                    <div class="bg bg-red"><img src="./assets/2-3007.png"></div>
+                </td>
                 <td>Любовное письмо<br><small class="text-muted">Посещение выбранной наложницы +1 ед.</small></td>
                 <td class="input-cell">
                     <input type="number" id="letter" class="listen" value="0" min="0">
@@ -399,8 +437,11 @@
                 <td id="letter-total">0</td>
             </tr>
             <tr>
-                <td class="icon"><div class="bg bg-violet"><img src="./assets/2-3026.png"></div></td>
-                <td>Фураж<br><small class="text-muted">Внимание! Расчет по этому предмету может быть не корректен, зависит не только от количества и рандома</small></td>
+                <td class="icon">
+                    <div class="bg bg-violet"><img src="./assets/2-3026.png"></div>
+                </td>
+                <td>Фураж<br><small class="text-muted">Внимание! Расчет по этому предмету может быть не корректен,
+                        зависит не только от количества и рандома</small></td>
                 <td class="input-cell">
                     <input type="number" id="forage-intimacy" class="forage listen" value="0" min="0">
                 </td>
@@ -409,7 +450,7 @@
             <tr class="total-row">
                 <td>ИТОГ</td>
                 <td></td>
-                <td>примерно</td>
+                <td></td>
                 <td id="intimacy-total">0</td>
             </tr>
         </table>
