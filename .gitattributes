@@ -1,0 +1,9 @@
+* text=auto eol=lf
+
+/.* export-ignore
+/gok/src/ export-ignore
+/gok/tests/ export-ignore
+/gok/vite.config.js export-ignore
+/composer.json export-ignore
+/composer.lock export-ignore
+/Makefile export-ignore
